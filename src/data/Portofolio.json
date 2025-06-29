@@ -1,0 +1,167 @@
+{
+  "data": [
+    {
+      "id": 8,
+      "name": "Investasi UMKM",
+      "description": "Investasi UMKM is an innovative web application that bridges investors with micro, small, and medium enterprises (MSMEs). Through this platform, investors can easily and securely invest their funds into promising MSMEs.  One of the key features of the application is its seamless integration with Midtrans, enabling fast and efficient payment processing for investors. By connecting both parties in a reliable ecosystem, Investasi UMKM supports mutual growth and fosters the development of the MSME sector in Indonesia.",
+      "image": "/images/web1.JPG",
+      "link": "https://investasi-umkm.netlify.app/",
+      "logo": [
+        {
+          "file": "/images/pngwing.com.png"
+        },
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/pngegg.png"
+        },
+        {
+          "file": "/images/react.png"
+        }
+      ],
+      "createdAt": "2025-06-25T18:23:22.354Z",
+      "updatedAt": "2025-06-25T18:23:22.354Z"
+    },
+    {
+      "id": 7,
+      "name": "Lee Photoworks",
+      "description": "Lee Photoworks is the personal portfolio of a freelance photographer specializing in capturing beautiful moments through stunning photography. With extensive skills and experience, Lee Photoworks consistently produces unique and captivating works.  From individual portraits to wedding shoots, each photography project reflects beauty, emotion, and a perfectly captured story. With a refined aesthetic sense and strong professionalism, Lee Photoworks is the ideal choice to preserve your most precious moments as impressive works of photographic art.",
+      "image": "/images/tile2.png",
+      "link": "https://keen-hodgkin-e33a72.netlify.app/",
+      "logo": [
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/react.png"
+        },
+        {
+          "file": "/images/tailwind-css.1024x615.png"
+        }
+      ],
+      "createdAt": "2025-06-25T18:22:13.868Z",
+      "updatedAt": "2025-06-25T18:22:13.868Z"
+    },
+    {
+      "id": 6,
+      "name": "PT Global Cendana Ekspor",
+      "description": "PT Global Cendana Ekspor is a company engaged in the export and import of raw materials. As a business focused on international trade, PT Global Cendana Ekspor has an extensive network and deep experience in facilitating cross-border commerce.  The company specializes in identifying, sourcing, and managing high-quality raw materials to meet various industrial demands. With a strong commitment to professionalism, reliability, and excellent customer service, PT Global Cendana Ekspor serves as a trusted partner for companies seeking dependable raw material supply to support their operations and business growth in the global market.",
+      "image": "/images/image1.png",
+      "link": "https://globalcendanaekspor.com/",
+      "logo": [
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/react.png"
+        },
+        {
+          "file": "/images/tailwind-css.1024x615.png"
+        }
+      ],
+      "createdAt": "2025-06-25T18:07:19.469Z",
+      "updatedAt": "2025-06-25T18:07:19.469Z"
+    },
+    {
+      "id": 5,
+      "name": "PT. Telaga Selat Samudra",
+      "description": "PT. Telaga Selat Samudra (TSS) is a construction and housing development company officially established in 2016. With a vision to deliver high-quality construction projects and innovative residential developments, TSS is committed to providing the best solutions for its clients.  As a construction service provider, TSS is supported by a skilled and experienced team capable of handling various projects, including commercial buildings, infrastructure, and industrial facilities. We emphasize high-quality workmanship, the use of modern technology, and strict adherence to project timelines — all to ensure client satisfaction and trust.",
+      "image": "/images/image2.png",
+      "link": "https://telagaselatsamudra.com/",
+      "logo": [
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/react.png"
+        },
+        {
+          "file": "/images/tailwind-css.1024x615.png"
+        }
+      ],
+      "createdAt": "2025-06-25T18:06:33.561Z",
+      "updatedAt": "2025-06-25T18:06:33.561Z"
+    },
+    {
+      "id": 4,
+      "name": "DLI Edu Venture",
+      "description": "DLI Edu Venture is a part of PUI-PT DLI (Center of Excellence for Science and Technology in Domestic Higher Education Institutions) at Universitas Negeri Malang. We focus on developing disruptive learning innovations tailored to the millennial digital era. Our primary goal is to create high-impact research-based products utilizing advanced and disruptive technologies.  As a division of PUI-PT DLI, DLI Edu Venture is committed to transforming traditional learning paradigms into more effective, interactive, and student-centered approaches that align with the needs and learning styles of today’s digital learners.  We leverage cutting-edge technologies such as Artificial Intelligence (AI), Augmented Reality (AR), Virtual Reality (VR), and others to deliver engaging learning experiences and push the boundaries of conventional education.",
+      "image": "/images/dli2.png",
+      "link": "https://dli-eduventure.um.ac.id/",
+      "logo": [
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/bootstrap.png"
+        },
+        {
+          "file": "/images/codeigniter_3.png"
+        }
+      ],
+      "createdAt": "2025-06-25T18:04:48.167Z",
+      "updatedAt": "2025-06-25T18:04:48.167Z"
+    },
+    {
+      "id": 3,
+      "name": "Portofolio Film maker",
+      "description": "Badhi Fadlul Rahman is a student from Yogyakarta with a strong passion and talent in the field of filmmaking. He is a dedicated and enthusiastic filmmaker, committed to creating inspiring cinematic works.  As a filmmaker, Badhi uses the camera as a medium to express his creative ideas. He possesses the skills to tell stories through compelling visuals and sound, while also mastering camera work, lighting, and editing to produce high-quality films.",
+      "image": "/images/webBadhi2.png",
+      "link": "https://kind-shannon-3a2466.netlify.app/",
+      "logo": [
+        {
+          "file": "/images/react.png"
+        },
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/tailwind-css.1024x615.png"
+        }
+      ],
+      "createdAt": "2025-06-25T18:03:46.764Z",
+      "updatedAt": "2025-06-25T18:03:46.764Z"
+    },
+    {
+      "id": 2,
+      "name": "Daerah Untuk Negeri",
+      "description": "Daerah Untuk Negeri (DUN) is an independent, legally established foundation focused on the development of Indonesia's human resources. The foundation is committed to making a meaningful contribution toward advancing the potential and quality of human capital in the country.  DUN recognizes that skilled and competent individuals are the cornerstone of a nation's development. Therefore, the foundation strives to enhance individual competencies and capacities while encouraging innovation and creativity across various sectors.",
+      "image": "/images/dun.png",
+      "link": "https://www.daerahuntuknegeri.org/",
+      "logo": [
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/react.png"
+        },
+        {
+          "file": "/images/tailwind-css.1024x615.png"
+        }
+      ],
+      "createdAt": "2025-06-25T18:01:45.101Z",
+      "updatedAt": "2025-06-25T18:01:45.101Z"
+    },
+    {
+      "id": 1,
+      "name": "PT Creative Visions Indonesia",
+      "description": "Creative Visions Indonesia is an integrated digital agency based in Jakarta, Indonesia. We offer comprehensive solutions for your digital needs—from digital marketing to creative production. Our mission is to help you navigate the challenges of the digital era by delivering innovative and effective strategies.  With a wide range of services, we support you in developing impactful digital marketing strategies, establishing a strong online presence, and creating engaging creative content.",
+      "image": "/images/cvi.png",
+      "link": "https://cv-indonesia.com/",
+      "logo": [
+        {
+          "file": "/images/figma.png"
+        },
+        {
+          "file": "/images/react.png"
+        },
+        {
+          "file": "/images/tailwind-css.1024x615.png"
+        }
+      ],
+      "createdAt": "2025-06-25T17:45:46.279Z",
+      "updatedAt": "2025-06-25T17:45:46.279Z"
+    }
+  ]
+}
