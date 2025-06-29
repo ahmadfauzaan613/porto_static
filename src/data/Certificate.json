@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "serti 1",
+      "description": "serti 1",
+      "image": "/images/serti1.jpg",
+      "createdAt": "2025-06-25T18:24:10.011Z",
+      "updatedAt": "2025-06-25T18:24:10.011Z"
+    },
+    {
+      "id": 2,
+      "name": "serti2 ",
+      "description": "serti2 ",
+      "image": "/images/serti2.jpg",
+      "createdAt": "2025-06-25T18:24:22.994Z",
+      "updatedAt": "2025-06-25T18:24:22.994Z"
+    },
+    {
+      "id": 3,
+      "name": "serti3",
+      "description": "serti3",
+      "image": "/images/serti3.jpg",
+      "createdAt": "2025-06-25T18:24:31.134Z",
+      "updatedAt": "2025-06-25T18:24:31.134Z"
+    },
+    {
+      "id": 4,
+      "name": "serti 4",
+      "description": "serti 4",
+      "image": "/images/frontend_developer_react-certificate.jpg",
+      "createdAt": "2025-06-26T12:52:17.482Z",
+      "updatedAt": "2025-06-26T12:52:17.482Z"
+    }
+  ]
+}
