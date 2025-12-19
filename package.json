@@ -17,10 +17,10 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.525.0",
     "motion": "^12.19.2",
-    "next": "15.3.4",
+    "next": "^16.1.0",
     "next-themes": "^0.4.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
