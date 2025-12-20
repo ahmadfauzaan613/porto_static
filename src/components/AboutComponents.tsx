@@ -1,12 +1,14 @@
 'use client'
 
-import React from 'react'
-import Image from 'next/image'
-import { result } from 'lodash'
-import { motion } from 'framer-motion'
 import AboutData from '@/data/About.json'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
-export default function AboutComponents() {
+interface AboutData {
+  text: string | undefined
+}
+
+export default function AboutComponents({text} : AboutData) {
   return (
     <motion.div className="h-full w-full px-4 sm:px-6 lg:px-8 py-5 mt-10" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
       <div>
@@ -20,7 +22,7 @@ export default function AboutComponents() {
       </div>
 
       <motion.p className="text-base sm:text-md md:text-md leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}>
-        {result(AboutData, 'text', '')}
+        {text}
       </motion.p>
     </motion.div>
   )
