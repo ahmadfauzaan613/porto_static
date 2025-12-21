@@ -4,7 +4,7 @@ WORKDIR /app
 
 #install deps
 COPY package.json ./
-RUN npm install --production=false
+RUN npm install
 
 # copy source
 COPY . .
