@@ -3,10 +3,9 @@
 
 import { ProjectRepository } from '@/app/repository/project.repository'
 import { saveFile } from '@/lib/upload'
-import fs from 'fs/promises'
 import { revalidatePath } from 'next/cache'
 import { cookies } from 'next/headers'
-import path from 'path'
+import { deleteFile } from '../../../../lib/delete-file'
 
 export async function createProject(formData: FormData) {
   const cookieStore = await cookies()
@@ -45,17 +44,18 @@ export async function deleteProject(id: number) {
   if (!session) {
     throw new Error('Unauthorized')
   }
+
   const project = await ProjectRepository.findById(id)
   if (!project) return
 
-  // hapus image
+  // hapus image di Supabase Storage
   if (project.image) {
-    await fs.unlink(path.join(process.cwd(), 'public', project.image))
+    await deleteFile(project.image)
   }
 
-  // hapus logos
+  // hapus logos di Supabase Storage
   for (const logo of project.logos) {
-    await fs.unlink(path.join(process.cwd(), 'public', logo.file))
+    await deleteFile(logo.file)
   }
 
   await ProjectRepository.deleteById(id)

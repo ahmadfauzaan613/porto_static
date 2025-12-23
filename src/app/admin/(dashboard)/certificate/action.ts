@@ -1,12 +1,10 @@
 'use server'
-
-import fs from 'fs/promises'
 import { revalidatePath } from 'next/cache'
-import path from 'path'
 
 import { CertificateRepository } from '@/app/repository/certificate.repository'
 import { saveFile } from '@/lib/upload'
 import { cookies } from 'next/headers'
+import { deleteFile } from '../../../../lib/delete-file'
 
 export async function createCertificate(formData: FormData) {
   const cookieStore = await cookies()
@@ -73,13 +71,10 @@ export async function deleteCertificate(id: number) {
   const certificate = await CertificateRepository.findById(id)
   if (!certificate) return
 
-  // hapus file image
   if (certificate.image) {
-    const filePath = path.join(process.cwd(), 'public', certificate.image)
-    await fs.unlink(filePath).catch(() => {})
+    await deleteFile(certificate.image)
   }
 
   await CertificateRepository.deleteById(id)
-
   revalidatePath('/admin/certificate')
 }

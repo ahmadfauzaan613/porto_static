@@ -1,5 +1,5 @@
+import { supabaseAdmin } from '@/lib/supabase-admin'
 import crypto from 'crypto'
-import fs from 'fs/promises'
 import path from 'path'
 
 export type UploadFolder = 'projects' | 'logos' | 'certificates'
@@ -10,12 +10,18 @@ export async function saveFile(file: File, folder: UploadFolder) {
 
   const ext = path.extname(file.name)
   const filename = `${crypto.randomUUID()}${ext}`
+  const filePath = `${folder}/${filename}`
 
-  const uploadDir = path.join(process.cwd(), 'public', 'uploads', folder)
-  await fs.mkdir(uploadDir, { recursive: true })
+  const { error } = await supabaseAdmin.storage.from('uploads').upload(filePath, buffer, {
+    contentType: file.type,
+    upsert: false,
+  })
 
-  const filePath = path.join(uploadDir, filename)
-  await fs.writeFile(filePath, buffer)
+  if (error) {
+    throw new Error(`Upload failed: ${error.message}`)
+  }
 
-  return `/uploads/${folder}/${filename}`
+  const { data } = supabaseAdmin.storage.from('uploads').getPublicUrl(filePath)
+
+  return data.publicUrl
 }
