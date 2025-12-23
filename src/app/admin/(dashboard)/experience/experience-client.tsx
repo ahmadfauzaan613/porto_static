@@ -73,8 +73,8 @@ export default function ExperienceClient({ experiences }: { experiences: Experie
             <Textarea name="description" placeholder="Description" rows={4} />
 
             <div className="grid grid-cols-2 gap-3">
-              <Input name="startDate" type="date" />
-              <Input name="endDate" placeholder="End Date or Present" />
+              <Input name="startDate" type="month" required />
+              <Input name="endDate" type="month" /> {/* optional */}
             </div>
 
             <Input name="location" placeholder="Location" />

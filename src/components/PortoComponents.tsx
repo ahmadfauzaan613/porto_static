@@ -10,14 +10,11 @@ interface Project {
     description: string
     image: string
     link: string
-  }[]
-  portoLogo: {
-    id: number
-    file: string
+    logos: { file: string }[]
   }[]
 }
 
-export default function PortoComponents({ portfolios, portoLogo }: Project) {
+export default function PortoComponents({ portfolios }: Project) {
   return (
     <motion.div
       className="px-4 sm:px-6 lg:px-8"
@@ -49,7 +46,21 @@ export default function PortoComponents({ portfolios, portoLogo }: Project) {
             },
           }}
         >
-          <CardPorto portfolios={portfolios} portoLogo={portoLogo} />
+          {portfolios.length === 0 ? (
+            <p className="text-sm text-muted-foreground">Belum ada portofolio yang ditambahkan.</p>
+          ) : (
+            portfolios.map(item => (
+              <CardPorto
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                description={item.description}
+                image={item.image}
+                link={item.link}
+                logo={item.logos}
+              />
+            ))
+          )}
         </motion.div>
       </div>
     </motion.div>

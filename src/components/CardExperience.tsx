@@ -19,6 +19,14 @@ import { Button } from './ui/button'
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
+
+export function formatMonthYear(date: Date | string) {
+  return new Date(date).toLocaleDateString('id-ID', {
+    month: 'long',
+    year: 'numeric',
+  })
+}
+
 export function CardExperience({
   company,
   role,
@@ -59,8 +67,8 @@ export function CardExperience({
       </div>
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <p className="">{location}</p>
-        <p className="">
-          {startDate} - {endDate}
+        <p className="text-sm text-muted-foreground">
+          {formatMonthYear(startDate)} – {endDate ? formatMonthYear(endDate) : 'Present'}
         </p>
       </div>
     </div>
@@ -107,8 +115,8 @@ export function CardExperienceAdmin({
 
         <div className="flex justify-between text-sm">
           <p>{location}</p>
-          <p>
-            {startDate} - {endDate}
+          <p className="text-sm text-muted-foreground">
+            {formatMonthYear(startDate)} – {endDate ? formatMonthYear(endDate) : 'Present'}
           </p>
         </div>
       </div>
@@ -135,8 +143,8 @@ export function CardExperienceAdmin({
             <Textarea name="description" defaultValue={description} rows={4} />
 
             <div className="grid grid-cols-2 gap-3">
-              <Input name="startDate" type="date" defaultValue={startDate} />
-              <Input name="endDate" type="date" defaultValue={endDate} />
+              <Input name="startDate" type="month" required />
+              <Input name="endDate" type="month" />
             </div>
 
             <Input name="location" defaultValue={location} />
