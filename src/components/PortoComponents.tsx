@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { CardPorto } from './CardPorto'
 
-interface Project {
+interface PortfolioClientProps {
   portfolios: {
     id: number
     name: string
@@ -14,7 +14,7 @@ interface Project {
   }[]
 }
 
-export default function PortoComponents({ portfolios }: Project) {
+export default function PortoComponents({ portfolios }: PortfolioClientProps) {
   return (
     <motion.div
       className="px-4 sm:px-6 lg:px-8"

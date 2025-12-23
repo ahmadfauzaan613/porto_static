@@ -29,6 +29,7 @@ export async function createExperience(formData: FormData): Promise<void> {
   })
 
   revalidatePath('/admin/experience')
+  revalidatePath('/experience')
 }
 
 export async function updateExperience(id: string, formData: FormData) {
@@ -49,6 +50,7 @@ export async function updateExperience(id: string, formData: FormData) {
   })
 
   revalidatePath('/admin/experience')
+  revalidatePath('/experience')
 }
 
 export async function deleteExperience(id: string) {
@@ -60,4 +62,5 @@ export async function deleteExperience(id: string) {
   }
   await ExperienceRepository.deleteById(id)
   revalidatePath('/admin/experience')
+  revalidatePath('/experience')
 }

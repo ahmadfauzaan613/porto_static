@@ -31,6 +31,7 @@ export async function createCertificate(formData: FormData) {
   })
 
   revalidatePath('/admin/certificate')
+  revalidatePath('/certificate')
 }
 
 export async function updateCertificate(id: number, formData: FormData) {
@@ -58,6 +59,7 @@ export async function updateCertificate(id: number, formData: FormData) {
   })
 
   revalidatePath('/admin/certificate')
+  revalidatePath('/certificate')
 }
 
 export async function deleteCertificate(id: number) {
@@ -77,4 +79,5 @@ export async function deleteCertificate(id: number) {
 
   await CertificateRepository.deleteById(id)
   revalidatePath('/admin/certificate')
+  revalidatePath('/certificate')
 }

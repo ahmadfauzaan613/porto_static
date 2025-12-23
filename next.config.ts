@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
           },
         ]
       : [],
+    unoptimized: true,
   },
 }
 

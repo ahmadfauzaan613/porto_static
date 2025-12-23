@@ -35,6 +35,7 @@ export async function createProject(formData: FormData) {
   })
 
   revalidatePath('/admin/portfolio')
+  revalidatePath('/portfolio')
 }
 
 export async function deleteProject(id: number) {
@@ -60,6 +61,7 @@ export async function deleteProject(id: number) {
 
   await ProjectRepository.deleteById(id)
   revalidatePath('/admin/portfolio')
+  revalidatePath('/portfolio')
 }
 
 export async function updateProject(id: number, formData: FormData) {
@@ -96,4 +98,5 @@ export async function updateProject(id: number, formData: FormData) {
   })
 
   revalidatePath('/admin/portfolio')
+  revalidatePath('/portfolio')
 }
