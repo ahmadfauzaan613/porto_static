@@ -1,12 +1,13 @@
 'use client'
 
+import NavbarData from '@/data/NavbarData.json'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { AnimatePresence, motion } from 'framer-motion'
-import NavbarData from '@/data/NavbarData.json'
+import { useState } from 'react'
 import DropdownTemplate from './dropdown-template'
+
 export default function Navbar() {
   const pathname = usePathname()
   const isAdminPath = pathname.startsWith('/admin')
@@ -27,7 +28,13 @@ export default function Navbar() {
               {NavbarData?.data.map((item, idx) => {
                 const isActive = pathname === item.url
                 return (
-                  <Link key={idx} href={item.url} className={` text-center text-sm sm:text-sm px-3 py-1  transition-colors duration-200 ${isActive ? 'font-bold ' : ''}`}>
+                  <Link
+                    key={idx}
+                    href={item.url}
+                    className={` text-center text-sm sm:text-sm px-3 py-1  transition-colors duration-200 ${
+                      isActive ? 'font-bold ' : ''
+                    }`}
+                  >
                     {item.name}
                   </Link>
                 )
@@ -38,14 +45,22 @@ export default function Navbar() {
         {/* Mobile dropdown menu - absolute with animation */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.25 }} className="absolute left-0 right-0 shadow-lg rounded-b-md flex flex-col sm:hidden mt-2 px-4 py-3 z-40">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="absolute left-0 right-0 shadow-lg rounded-b-md flex flex-col sm:hidden mt-2 px-4 py-3 z-40"
+            >
               {NavbarData?.data.map((item, idx) => {
                 const isActive = pathname === item.url
                 return (
                   <Link
                     key={idx}
                     href={item.url}
-                    className={`block bg-background text-center text-sm px-3 py-2  transition-colors duration-200 ${isActive ? 'font-bold' : ' hover:font-bold'}`}
+                    className={`block bg-background text-center text-sm px-3 py-2  transition-colors duration-200 ${
+                      isActive ? 'font-bold' : ' hover:font-bold'
+                    }`}
                     onClick={() => setIsOpen(false)} // close after click
                   >
                     {item.name}

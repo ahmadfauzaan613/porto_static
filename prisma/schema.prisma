@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model abouts {
+  id        String   @id @default(uuid())
+  text      String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+}
+
+model users_auth {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+}
+
+model Profile {
+  id    String        @id @default(uuid())
+  name  String
+  role  String
+  links ProfileLink[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+}
+
+model ProfileLink {
+  id   String   @id @default(uuid())
+  type LinkType
+  url  String
+
+  profileId String
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum LinkType {
+  linkedin
+  whatsapp
+  email
+  resume
+}
+
+model Experience {
+  id          String    @id @default(uuid())
+  company     String
+  role        String
+  description String
+  location    String
+  startDate   DateTime
+  endDate     DateTime?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+}
+
+model Project {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  image       String
+  link        String
+
+  logos ProjectLogo[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ProjectLogo {
+  id   Int    @id @default(autoincrement())
+  file String
+
+  projectId Int
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Certificate {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  image       String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -1,15 +1,24 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import Linkdata from '@/data/HomeData.json'
 import { ButtonFunctionProps, IDataLinkType } from '@/types/HomeType'
 import { motion } from 'framer-motion'
-import { result } from 'lodash'
 import { File, FileUser, Linkedin, Mail, Phone } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export default function HomeComponents() {
+interface HomeComponentsProps {
+  profile: {
+    name: string
+    role: string
+  } | null
+  profileLik: {
+    type: string
+    url: string
+  }[]
+}
+
+export default function HomeComponents({ profile, profileLik }: HomeComponentsProps) {
   const ButtonFunction: React.FC<ButtonFunctionProps> = ({ data }) => {
     switch (data.toLowerCase()) {
       case 'linkedin':
@@ -34,12 +43,12 @@ export default function HomeComponents() {
       transition={{ duration: 0.8 }}
     >
       <motion.h1
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold"
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold uppercase"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
       >
-        AHMAD FAUZAN
+        {profile?.name}
       </motion.h1>
       <motion.h1
         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold uppercase"
@@ -47,7 +56,7 @@ export default function HomeComponents() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        Front End Developer
+        {profile?.role}
       </motion.h1>
       <motion.div
         className="w-full bg-black h-[30vh] sm:h-[40vh] md:h-[50vh] mt-10 relative"
@@ -68,7 +77,7 @@ export default function HomeComponents() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 1 }}
       >
-        {result(Linkdata, 'Linkdata.dataLink', []).map((item: IDataLinkType, id: number) => (
+        {profileLik.map((item: IDataLinkType, id: number) => (
           <Link href={item.url} target="_blank" rel="noopener noreferrer" key={id}>
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Button variant="outline" className="border cursor-pointer rounded-full px-5 py-5">

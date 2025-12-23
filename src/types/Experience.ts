@@ -12,3 +12,13 @@ export interface IExperienceType {
   toggleExpand: () => void
   isExpanded: boolean
 }
+
+export interface IExperienceAdminType {
+  id: string
+  company: string
+  role: string
+  description: string
+  startDate: string
+  endDate: string
+  location: string
+}
