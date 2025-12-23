@@ -1,11 +1,11 @@
 'use client'
 
+import { loginAction } from '@/components/AdminCompo/action'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import Image from 'next/image'
 import { toast } from 'sonner'
-import { loginAction } from '../../../components/AdminCompo/action'
 
 export default function LoginPage() {
   return (
