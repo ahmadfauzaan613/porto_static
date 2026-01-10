@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 // app/admin/(dashboard)/certificate/page.tsx
 import { CertificateRepository } from '@/app/repository/certificate.repository'
 import CertificateClient from './CertificateClient'

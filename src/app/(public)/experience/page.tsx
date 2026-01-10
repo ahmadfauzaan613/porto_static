@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import ExperienceComponents from '@/components/ExperienceComponents'
 import { ExperienceRepository } from '../../repository/experience.repository'
 

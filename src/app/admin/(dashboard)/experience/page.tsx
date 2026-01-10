@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { ExperienceRepository } from '../../../repository/experience.repository'
 import ExperienceClient from './experience-client'
 

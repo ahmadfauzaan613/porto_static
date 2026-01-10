@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import HomeComponents from '@/components/HomeComponents'
 import { ProfileRepository } from '../repository/profile.repository'
 

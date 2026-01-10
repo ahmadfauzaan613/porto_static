@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import Title from '@/components/AdminCompo/Title'
 import { AboutRepository } from '../../../repository/about.repository'
 import AboutForm from './about-form'

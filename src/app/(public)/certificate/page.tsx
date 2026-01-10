@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import CertiComponents from '@/components/CertiComponents'
 import { CertificateRepository } from '../../repository/certificate.repository'
 

@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { ProjectRepository } from '@/app/repository/project.repository'
 import PortfolioClient from './PortfolioClient'
 

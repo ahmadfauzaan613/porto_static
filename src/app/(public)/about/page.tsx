@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import AboutComponents from '@/components/AboutComponents'
 import { AboutRepository } from '../../repository/about.repository'
 

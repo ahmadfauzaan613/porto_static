@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: porto_postgres
+    environment:
+      POSTGRES_DB: porto_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  web:
+    build: .
+    container_name: porto_web
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/porto_db
+      DIRECT_URL: postgresql://postgres:password@postgres:5432/porto_db
+      NODE_ENV: production
+    volumes:
+      - ./public/uploads:/app/public/uploads
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
