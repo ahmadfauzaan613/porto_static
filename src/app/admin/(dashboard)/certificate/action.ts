@@ -42,6 +42,9 @@ export async function updateCertificate(id: number, formData: FormData) {
     throw new Error('Unauthorized')
   }
 
+  const certificate = await CertificateRepository.findById(id)
+  if (!certificate) return
+
   const name = formData.get('name') as string
   const description = formData.get('description') as string
   const imageFile = formData.get('image') as File | null
@@ -49,14 +52,23 @@ export async function updateCertificate(id: number, formData: FormData) {
   let imagePath: string | undefined = undefined
 
   if (imageFile && imageFile.size > 0) {
+    if (certificate.image) {
+      await deleteFile(certificate.image)
+    }
+
     imagePath = await saveFile(imageFile, 'certificates')
   }
 
-  await CertificateRepository.updateById(id, {
+  const payload: any = {
     name,
     description,
-    image: imagePath,
-  })
+  }
+
+  if (imagePath !== undefined) {
+    payload.image = imagePath
+  }
+
+  await CertificateRepository.updateById(id, payload)
 
   revalidatePath('/admin/certificate')
   revalidatePath('/certificate')

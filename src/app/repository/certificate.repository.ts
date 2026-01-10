@@ -42,7 +42,7 @@ export const CertificateRepository = {
     data: {
       name: string
       description: string
-      image?: string // optional (tidak overwrite jika tidak upload baru)
+      image?: string
     }
   ) {
     return prisma.certificate.update({

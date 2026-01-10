@@ -34,15 +34,14 @@ export const ProfileRepository = {
       })
     }
 
-    // update profile + replace links
     return prisma.profile.update({
       where: { id: existingProfile.id },
       data: {
         name,
         role,
         links: {
-          deleteMany: {}, // hapus semua link lama
-          create: links, // buat ulang (simple & aman)
+          deleteMany: {},
+          create: links,
         },
       },
     })

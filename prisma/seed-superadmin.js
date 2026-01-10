@@ -10,8 +10,6 @@ async function main() {
   if (!username || !rawPassword) {
     throw new Error('❌ ADMIN_USERNAME or ADMIN_PASSWORD is not set')
   }
-
-  // 🔐 GUARD: cek apakah user sudah ada
   const existingUser = await prisma.users_auth.findUnique({
     where: { username },
   })

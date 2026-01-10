@@ -1,4 +1,3 @@
-// app/admin/(dashboard)/portfolio/action.ts
 'use server'
 
 import { ProjectRepository } from '@/app/repository/project.repository'
@@ -49,12 +48,10 @@ export async function deleteProject(id: number) {
   const project = await ProjectRepository.findById(id)
   if (!project) return
 
-  // hapus image di Supabase Storage
   if (project.image) {
     await deleteFile(project.image)
   }
 
-  // hapus logos di Supabase Storage
   for (const logo of project.logos) {
     await deleteFile(logo.file)
   }
@@ -71,23 +68,35 @@ export async function updateProject(id: number, formData: FormData) {
   if (!session) {
     throw new Error('Unauthorized')
   }
+
+  const project = await ProjectRepository.findById(id)
+  if (!project) return
+
   const imageFile = formData.get('image') as File
   const logoFiles = formData.getAll('logos') as File[]
 
   let imagePath: string | undefined = undefined
 
   if (imageFile && imageFile.size > 0) {
+    if (project.image) {
+      await deleteFile(project.image)
+    }
     imagePath = await saveFile(imageFile, 'projects')
   }
 
-  const logos =
-    logoFiles.length > 0
-      ? await Promise.all(
-          logoFiles.map(async file => ({
-            file: await saveFile(file, 'logos'),
-          }))
-        )
-      : undefined
+  let logos: { file: string }[] | undefined = undefined
+
+  if (logoFiles.length > 0) {
+    for (const logo of project.logos) {
+      await deleteFile(logo.file)
+    }
+
+    logos = await Promise.all(
+      logoFiles.map(async file => ({
+        file: await saveFile(file, 'logos'),
+      }))
+    )
+  }
 
   await ProjectRepository.updateById(id, {
     name: formData.get('name') as string,

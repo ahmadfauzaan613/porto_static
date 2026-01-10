@@ -1,13 +1,17 @@
-import { supabaseAdmin } from '@/lib/supabase-admin'
+import fs from 'fs'
+import path from 'path'
 
 export async function deleteFile(publicUrl: string) {
-  const path = publicUrl.split('/uploads/')[1]
+  try {
+    const fileName = publicUrl.split('/uploads/')[1]
+    if (!fileName) return
 
-  if (!path) return
+    const filePath = path.join(process.cwd(), 'public', 'uploads', fileName)
 
-  const { error } = await supabaseAdmin.storage.from('uploads').remove([path])
-
-  if (error) {
-    console.error('Failed to delete file:', error.message)
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath)
+    }
+  } catch (error) {
+    console.error('Failed to delete local file:', error)
   }
 }
