@@ -47,7 +47,7 @@ export default function PortoComponents({ portfolios }: PortfolioClientProps) {
           }}
         >
           {portfolios.length === 0 ? (
-            <p className="text-sm text-muted-foreground">Belum ada portofolio yang ditambahkan.</p>
+            <p className="text-sm text-muted-foreground">Nothing to show here yet.</p>
           ) : (
             portfolios.map(item => (
               <CardPorto
