@@ -1,14 +1,11 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // 1. Atur Limit Upload agar tidak error "Body exceeded 1 MB limit"
   experimental: {
     serverActions: {
-      bodySizeLimit: '50mb', // Disamakan dengan settingan Nginx
+      bodySizeLimit: '50mb', // PASTIKAN INI ADA
     },
   },
-
-  // 2. Izin akses gambar (Hanya untuk domain sendiri)
   images: {
     remotePatterns: [
       {
@@ -22,8 +19,6 @@ const nextConfig: NextConfig = {
         pathname: '/uploads/**',
       },
     ],
-    // Opsional: Jika gambar terasa lambat/error saat di-load, uncomment baris bawah ini
-     unoptimized: true, 
   },
 }
 

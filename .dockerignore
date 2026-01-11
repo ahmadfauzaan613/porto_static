@@ -1,0 +1,9 @@
+# PENTING: Abaikan folder ini agar build sukses
+certbot
+nginx
+
+# Abaikan file sampah lain
+node_modules
+.next
+.git
+public/uploads
