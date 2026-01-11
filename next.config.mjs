@@ -1,11 +1,10 @@
-import type { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '50mb', // PASTIKAN INI ADA
-    },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // ✅ Next.js 15/16: Settingan ini WAJIB di Root (Luar experimental)
+  serverActions: {
+    bodySizeLimit: '50mb',
   },
+
   images: {
     remotePatterns: [
       {
@@ -20,6 +19,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
