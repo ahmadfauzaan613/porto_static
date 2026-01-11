@@ -33,6 +33,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./certbot/conf:/etc/letsencrypt  
       - ./certbot/www:/var/www/certbot   
+      - ./public/uploads:/var/www/uploads
     depends_on:
       - web
 
