@@ -11,21 +11,25 @@ services:
     build: .
     container_name: porto_web
     restart: always
-    # ⬇️ UBAH BAGIAN INI
-    ports:
-      - "3000:3000"  # Map port 3000 VPS ke port 3000 Container
-    # expose:        # Hapus atau comment bagian expose ini
-    #   - "3000"
+    expose:
+      - "3000"     
     env_file: .env
     volumes:
       - ./public/uploads:/app/public/uploads
     depends_on:
       - postgres
 
-  # ⬇️ MATIKAN NGINX DULU (Comment semua)
-  # nginx:
-  #   image: nginx:alpine
-  #   ...
+
+  nginx:
+    image: nginx:alpine
+    container_name: porto_nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      - web
 
 volumes:
   postgres_data:
